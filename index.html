@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/Frame 1.png" class="logo">
+            <ul>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certificate">Certifications</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <h1>Hi, I'm <span>Shriya Reddy</span></h1>
+            <br>
+            <p>Information Science and Engineering<br> Undergrad
+                at NMIT, Bangalore</p>
+        </div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/Screenshot 2023-09-15 124735 1.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="subtitle">About Me</h1>
+                <p>Hey peeps!<br> I'm Shriya, currently pursuing my undergraduate degree in Information Science at Nitte Meenakshi Institute of Technology. I'm currently in my 5th semester, and my academic journey has been an exciting one filled with opportunities for growth and learning.<br>
+                    I consider myself an extrovert with a passion for effective communication. Public speaking and leadership come naturally to me. These qualities have not only enriched my personal development but have also allowed me to contribute actively to various academic and extracurricular pursuits. I'm known for being approachable and fun to interact with.<br><br>
+                    My true passion lies in front-end web development, where I can blend my creativity with technical skills to craft visually appealing and user-friendly interfaces. Technology is a world I'm eager to explore further, and I'm always up for new challenges and opportunities to expand my knowledge.
+                </p>
+                <div class="table-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                    <li><span>Figma Prototyping</span><br>Designing web/app interfaces</li>
+                    <li><span>Web development</span><br>Web app development</li>
+                    <li><span>Python Programming</span><br>Basics</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                    <li><span>Intern at College</span><br>Designing web/app interfaces</li>
+                    <li><span>Digital Marketing Lead</span><br>Anaadyanta</li>
+                    <li><span>Social Media Lead</span><br>Google Developer Student Club</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                    <li><span>Nitte Meenakshi Institute of Technology</span><br>B.E. Information Science & Engineering</li>
+                    <li><span>Jindal Vidya Mandir</span><br>11th & 12th</li>
+                    <li><span>Jindal Vidya Mandir</span><br>Preprimary - 10th</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="certificate">
+    <div class="container">
+        <h1 class="subtitle">Certifications</h1>
+        <div class="certlist">
+            <div>
+                <h2>Responsive Web Design</h2>
+                <p>I have completed a Responsive Web Design certification on FreeCodeCamp.org.</p>
+                <a href="https://freecodecamp.org/certification/lshriyareddy/responsive-web-design"><button>View Certificate</button></a>
+            </div>
+            <div>
+                <h2>Create and design digital products using Canva</h2>
+                <p>Learnt creating interfaces and tools in Canva and got my hands on it.</p>
+                <a href="https://www.coursera.org/account/accomplishments/certificate/YSAWEXTKKHWM"><button>View Certificate</button></a>
+            </div>
+            <div>
+                <h2>C Programming</h2>
+                <p>Basic Programming knowledge of C language.</p>
+                <a href="verify.mygreatlearning.com/IBLMXYXL"><button>View Certificate</button></a>
+            </div>
+        </div>
+        <div class="view">
+        <button type="submit">View More</button>
+        </div>
+    </div>
+</div>
+<!------contact--------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+            <h1 class="subtitle">Contact Me</h1>
+            <p>lshriyareddy@gmail.com</p>
+            <p>9482793535</p>
+        </div>
+        <div class="btnn">
+        <a href="" class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-right">
+            <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+            </form>
+            <span id="msg"></span>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+<script>
+    const scriptURL = '<https://script.google.com/macros/s/AKfycbxJSKGWvkOpFl8MD72J72uSdV_FtxyLda-QbJYfisEzZ6qIYqwvx69AE8ApUvp15bDA/exec>'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout (function() {
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
